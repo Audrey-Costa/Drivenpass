@@ -32,6 +32,7 @@ model Credentials{
   @@unique([title, userId], name: "credentialTitle")
 }
 
+
 model SecretNotes{
   id           Int @id @default(autoincrement())
   title        String
@@ -58,8 +59,8 @@ model Cards{
   @@unique([title, userId], name: "noteTitle")
 }
 
-enum Type{
-  credit
+enum Type {
+  credit 
   debit
   both
 }
