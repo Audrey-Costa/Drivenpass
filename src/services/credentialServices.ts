@@ -10,3 +10,12 @@ export async function createCredential(newCredential: CreateCredencials, userId:
         throw {type: "Conflict", message: "Credentials already exists"}
     }
 }
+
+export async function getAllCredentials(userId: number) {
+    const credentials = await credentialRepository.getAllCredentials(userId);
+
+    if(!credentials){
+        throw {type: "Not Found", message:"No credentials yet"}
+    }
+    return credentials;
+}
