@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateSecretNotes } from "../types/noteType";
-import * as noteService from "../services/noteService"
+import * as noteService from "../services/noteServices"
 
 export async function createNote(req: Request, res: Response){
     const newNote: CreateSecretNotes = req.body;
