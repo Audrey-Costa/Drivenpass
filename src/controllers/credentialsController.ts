@@ -15,3 +15,11 @@ export async function getAllCredentials(req: Request, res: Response) {
 
     res.status(200).send(credentials)
 }
+
+export async function getCredentialById(req: Request, res: Response){
+    const credentialId: number = Number(req.params.id);
+    const userId: number = res.locals.userId;
+    const credential = await credentialService.getCredentialById(credentialId, userId)
+
+    res.status(200).send(credential);
+}
