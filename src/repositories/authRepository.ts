@@ -1,5 +1,5 @@
 import { prisma } from "../config/database"
-import { UserRegister } from "../types/usersTypes";
+import { UserAuth } from "../types/usersTypes";
 
 
 export async function findUser(email: string){
@@ -8,6 +8,6 @@ export async function findUser(email: string){
     return user;
 }
 
-export async function registerUser(newUser: UserRegister){
+export async function registerUser(newUser: UserAuth){
     await prisma.users.create({data: newUser })
 }
