@@ -7,7 +7,7 @@ export async function registerUser(req: Request, res: Response){
 
     await authService.registerUser(newUser);
 
-    res.sendStatus(201)
+    res.sendStatus(201);
 }
 
 export async function login(req: Request, res: Response){
